@@ -6,17 +6,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Page Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-  <script src="main.js"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="client/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="client/css/style.css">
 </head>
 
 <body ng-controller="todoAppController as model">
   <h1>Test TODO app!</h1>
-  <div ng-repeat="todo in model.todos" class="todo">
-    <input type="checkbox" ng-checked="todo.done">
-    <span>{{ todo.description }}</span>
+  <div ng-repeat="todo in model.todos" class="todo custom-control custom-checkbox">
+    <input ng-model="checked" ng-change="model.toggleCheckbox(todo)" id="check-{{$index}}" type="checkbox" class="custom-control-input"
+      ng-checked="todo.done">
+    <label class="custom-control-label" for="check-{{$index}}">{{ todo.description }}</label>
   </div>
-  <button></button>
+  <div class="buttons">
+    <button ng-click="model.edding = true;" class="btn btn-primary add">New ToDo!</button>
+    <button ng-click="model.deleteChecked()" class="btn btn-danger delete">Delete selected</button>
+    <button ng-click="model.selectAll()" class="btn select">Select all</button>
+  </div>
+  <div ng-if="model.edding" class="add-form">
+    <input ng-model="model.toAdd.description" type="text" class="form-control" placeholder="Description">
+    <button ng-click="model.addNew()" class="btn btn-success">Add</button>
+  </div>
   <script src="client/js/lib/angular.min.js"></script>
   <script src="client/js/app.js"></script>
 </body>
