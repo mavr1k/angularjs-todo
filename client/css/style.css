@@ -45,8 +45,13 @@ h1 {
   margin: 0 auto;
 }
 
-.add-form .btn {
+.delete-one {
+  margin-left: 10px;
+}
+
+.delete-todo {
   float: right;
+  margin-left: 5px;
 }
 
 .add-form input {

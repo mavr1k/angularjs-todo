@@ -26,6 +26,9 @@ angular.module('todoApp', [])
     self.deleteChecked = function () {
       self.todos = self.todos.filter(el => !el.done);
     }
+    self.delete = function (i) {
+      self.todos.splice(i, 1);
+    }
     self.selectAll = function () {
       self.todos.forEach(el => el.done = true);
     }

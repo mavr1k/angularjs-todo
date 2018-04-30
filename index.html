@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Page Title</title>
+  <title>Todos!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="client/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" media="screen" href="client/css/style.css">
@@ -22,6 +22,7 @@
       <input ng-model="checked" ng-change="model.toggleCheckbox(todo)" id="check-{{$index}}" type="checkbox" class="custom-control-input"
         ng-checked="todo.done">
       <label class="custom-control-label" for="check-{{$index}}">{{ todo.description }}</label>
+      <button ng-click="model.delete($index)" class="btn btn-danger delete-one">-</button>
     </div>
   </div>
   <div ng-if="model.edding" class="add-form">
