@@ -1,5 +1,56 @@
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif;  
+  background: #f3f3f3;
+}
+
+h1 {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todos {
+  width: 100%;
+  padding: 50px 0;
+}
+
+.todo {
+  width: 50%;
+  margin: 0 auto;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+.todo label {
+  position: relative;
+  user-select: none;
+  word-break: break-all;
+}
+
+.top-btns {
+  text-align: center;
+}
+
+.todo .custom-control-label::before,
+.todo .custom-control-label::after {
+  left: -30px;
+  top: 11px;
+}
+
+.add-form {
+  width: 33%;
+  margin: 0 auto;
+}
+
+.add-form .btn {
+  float: right;
+}
+
+.add-form input {
+  margin-bottom: 5px; 
 }
 
 @import url('https://fonts.googleapis.com/css?family=Raleway');
